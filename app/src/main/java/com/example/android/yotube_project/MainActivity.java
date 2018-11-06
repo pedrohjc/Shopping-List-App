@@ -24,6 +24,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.app.Activity;
 
+import android.widget.Toast;
+import android.widget.AdapterView;
+import android.widget.TextView;
+import android.view.View;
+
+
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<String> shoppingList = null;
@@ -44,6 +50,17 @@ public class MainActivity extends AppCompatActivity {
         lv = (ListView) findViewById(R.id.listView);
         lv.setAdapter(adapter);
 
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView parent, View view, final int position, long id) {
+                String selectedItem = ((TextView) view).getText().toString();
+                if (selectedItem.trim().equals(shoppingList.get(position).trim())) {
+                    removeElement(selectedItem, position);
+                } else {
+                    Toast.makeText(getApplicationContext(),"Error Removing Element", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -137,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences WordSearchPutPrefs = context.getSharedPreferences("dbArrayValues", Activity.MODE_PRIVATE);
         SharedPreferences.Editor prefEditor = WordSearchPutPrefs.edit();
         prefEditor.putStringSet("myArray", WhatToWrite);
-        prefEditor.commit();
+        prefEditor.apply();
     }
 
     public static ArrayList getArrayVal( Context dan)
@@ -146,5 +162,26 @@ public class MainActivity extends AppCompatActivity {
         Set<String> tempSet = new HashSet<String>();
         tempSet = WordSearchGetPrefs.getStringSet("myArray", tempSet);
         return new ArrayList<String>(tempSet);
+    }
+
+    public void removeElement(String selectedItem, final int position){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Remove " + selectedItem + "?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                shoppingList.remove(position);
+                Collections.sort(shoppingList);
+                storeArrayVal(shoppingList, getApplicationContext());
+                lv.setAdapter(adapter);
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
     }
 }
