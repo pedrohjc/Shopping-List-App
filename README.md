@@ -1,5 +1,5 @@
 # Shopping-List-App
-This is a shopping list built to be as simple as possible but also as useful as possible. This is an extremely user friendly.
+This is a shopping list built to be as simple as possible but also as useful as possible. This is an app focused on providing an user friendly experience.
 
 ## Concept
 The concept is simple. An app that can be used by anyone and it is extremely easy to use. There is no Login screen or any information
