@@ -26,7 +26,7 @@ To delete any of the items, gll you have to do is to click on the item you want 
 
 #### To Sort
 If you go to the vertical three dots on the right top of the screen, it will give you a series of options. Select 'SORT' and the items
-on the list will be sorted by alphabetical order. Keep in mind the app will make the first word **upercase automatically. 
+on the list will be sorted by alphabetical order. Keep in mind the app will make the first word upercase automatically. 
 
 ![screen4](https://user-images.githubusercontent.com/23244232/58119324-aef1b180-7bd0-11e9-8aad-d683c1f0a2a8.png)
 
