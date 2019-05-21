@@ -1,5 +1,5 @@
 # Shopping-List-App
-This is a shopping list built to be as simple as possible but also as useful as possible. This is an extremely userfriendly.
+This is a shopping list built to be as simple as possible but also as useful as possible. This is an extremely user friendly.
 
 ## Concept
 The concept is simple. An app that can be used by anyone and it is extremely easy to use. There is no Login screen or any information
@@ -7,7 +7,7 @@ related with the user. It is just a simple shopping list.
 
 ## One Screen App
 The app was created to be used only on one screen. The user wont need to change screen or wait for any loading screen since the memory
-used to save the items on the list is local. The app was design using AlertDialog. It makes the UX much easier to deal and userfriendly.
+used to save the items on the list is local. The app was design using AlertDialog. It makes the UX much easier to deal and user friendly.
 
 ### Standard/Inital Screen
 As you can see below, the standard screen is pretty intuitive and easy to use. 
