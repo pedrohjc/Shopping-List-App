@@ -20,7 +20,7 @@ will be prompt to enter the name (string) of the product/item you want to save. 
 ![screen2](https://user-images.githubusercontent.com/23244232/58118579-29b9cd00-7bcf-11e9-8db6-dc71f6507c42.png)
 
 #### To Delete
-To delete any of the items, gll you have to do is to click on the item you want to delete and press 'YES' to confirm or 'NO' to cancel.
+To delete any of the items, all you have to do is to click on the item you want to delete and press 'YES' to confirm or 'NO' to cancel.
 
 ![screen3](https://user-images.githubusercontent.com/23244232/58118776-903eeb00-7bcf-11e9-8f90-d730168d3fa0.png)
 
